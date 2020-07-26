@@ -1,0 +1,38 @@
+{
+  "SAIRPORT_SYN": {
+    "target": {
+      "object": "SAIRPORT",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SBOOK_SYN": {
+    "target": {
+      "object": "SBOOK",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SCARR_SYN": {
+    "target": {
+      "object": "SCARR",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SCUSTOM_SYN": {
+    "target": {
+      "object": "SCUSTOM",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SFLIGHT_SYN": {
+    "target": {
+      "object": "SFLIGHT",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SPFLI_SYN": {
+    "target": {
+      "object": "SPFLI",
+      "schema": "SFLIGHT"
+    }
+  }
+}

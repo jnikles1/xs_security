@@ -1,0 +1,1 @@
+VIEW SFLIGHT_VIEW as select * from SFLIGHT_SYN

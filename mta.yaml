@@ -1,3 +1,36 @@
 ID: AppRoutingDemo
 _schema-version: '2.1'
 version: 0.0.1
+modules:
+  - name: AppRouterDemo_DB
+    type: hdb
+    path: AppRouterDemo_DB
+    requires:
+      - name: hdi_AppRouterDemo_DB
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: cross-container-service-1
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: ServiceName_1
+          service: '~{the-service-name}'
+  - name: AppRouterDemo_BE1
+    type: nodejs
+    path: AppRouterDemo_BE1
+    provides:
+      - name: AppRouterDemo_BE1_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_AppRouterDemo_DB
+resources:
+  - name: hdi_AppRouterDemo_DB
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: cross-container-service-1
+    parameters:
+      service-name: SFLIGHT
+    properties:
+      the-service-name: '${service-name}'
+    type: org.cloudfoundry.existing-service

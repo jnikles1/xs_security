@@ -1,0 +1,4 @@
+service {
+	"SFLIGHT_VIEW" as "Flights";
+	"SAIRPORTS_VIEW" as "Airports";
+}

@@ -1,0 +1,1 @@
+VIEW SBOOK_VIEW as select * from SBOOK_SYN

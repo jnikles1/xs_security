@@ -1,0 +1,1 @@
+VIEW SAIRPORT_VIEW as select * from SAIRPORT_SYN
