@@ -1,0 +1,51 @@
+{
+	"xsappname": "AppRoutingDemoApp",
+	"scopes": [{
+		"name": "$XSAPPNAME.READ",
+		"description": "Read data"
+	}, {
+		"name": "$XSAPPNAME.EDIT",
+		"description": "Edit data"
+	}, {
+		"name": "$XSAPPNAME.CVIEWS",
+		"description": "Run Calculation Views"
+	}, {
+		"name": "$XSAPPNAME.RUN",
+		"description": "Run the application"
+	}
+	],
+	"attributes": [{
+		"name": "COUNTRY",
+		"description": "Employee country",
+		"valueType": "string"
+	}, {
+		"name": "CURRENCY",
+		"description": "allowable currencies",
+		"valueType": "string"
+	}, {
+		"name": "CLIENT",
+		"description": "ABAP Client Number",
+		"valueType": "int"
+	}],
+	"role-templates": [{
+		"name": "View_Read_Only",
+		"description": "Template for reading from views",
+		"scope-references": ["$XSAPPNAME.READ", "$XSAPPNAME.RUN"],
+		"attribute-references": ["COUNTRY", "CURRENCY", "CLIENT"]
+	},
+	{
+		"name": "View_Editor",
+		"description": "Template for reading from views",
+		"scope-references": ["$XSAPPNAME.READ", "$XSAPPNAME.EDIT", "$XSAPPNAME.RUN"],
+		"attribute-references": ["COUNTRY", "CURRENCY", "CLIENT"]
+	},
+	{
+		"name": "CV_Viewer",
+		"description": "Template for reading from calculation views",
+		"scope-references": ["$XSAPPNAME.READ", "$XSAPPNAME.CVIEWS", "$XSAPPNAME.RUN"],
+		"attribute-references": ["COUNTRY", "CURRENCY", "CLIENT"]
+	}
+	
+	
+	]
+}

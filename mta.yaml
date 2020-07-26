@@ -23,6 +23,12 @@ modules:
           url: '${default-url}'
     requires:
       - name: hdi_AppRouterDemo_DB
+      - name: AppRouterDemo-xsuaa
+
+  - name: AppRoutingDemo_Frontend
+    type: html5
+    path: AppRoutingDemo_Frontend
+
 resources:
   - name: hdi_AppRouterDemo_DB
     properties:
@@ -34,3 +40,7 @@ resources:
     properties:
       the-service-name: '${service-name}'
     type: org.cloudfoundry.existing-service
+  - name: AppRouterDemo-xsuaa
+    type: com.sap.xs.uaa
+    parameters:
+      service-name: AppRoutingDemo
