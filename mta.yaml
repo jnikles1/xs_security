@@ -24,11 +24,17 @@ modules:
     requires:
       - name: hdi_AppRouterDemo_DB
       - name: AppRouterDemo-xsuaa
-
+      - name: AppRouterDemo_DB
   - name: AppRoutingDemo_Frontend
     type: html5
     path: AppRoutingDemo_Frontend
-
+    requires:
+      - name: AppRouterDemo_BE1_api
+        properties:
+          url: '~{url}'
+          forwardAuthToken: true
+          name: AppRouterDemo_BE1_api
+        group: destinations
 resources:
   - name: hdi_AppRouterDemo_DB
     properties:
@@ -37,6 +43,7 @@ resources:
   - name: cross-container-service-1
     parameters:
       service-name: SFLIGHT
+      path: xs-security.json
     properties:
       the-service-name: '${service-name}'
     type: org.cloudfoundry.existing-service

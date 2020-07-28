@@ -1,4 +1,10 @@
 service {
-	"SFLIGHT_VIEW" as "Flights";
+scopes (
+		create ( "EDIT" ),
+		read ( "READ" ),
+		update ( "EDIT" ),
+		delete ( "EDIT" )
+	);
+	"SFLIGHT_VIEW" as "Flights"  key("MANDT", "CARRID", "CONNID", "FLDATE");
 	"SAIRPORT_VIEW" as "Airports";
 }

@@ -1,5 +1,36 @@
 {
 	"welcomeFile": "index.html",
-	"authenticationMethod": "xsuaa",
-	"routes": []
+	"authenticationMethod": "route",
+	"routes": [
+
+		{
+		"source": "^/odata(.*)",
+		"destination": "AppRouterDemo_BE1_api",
+		"csrfProtection": true,
+		"authenticationType": "xsuaa",
+		"scope": {
+			"GET": "$XSAPPNAME.READ",
+			"POST": [
+				"$XSAPPNAME.EDIT"
+			],
+			"PUT": [
+				"$XSAPPNAME.EDIT"
+			],
+			"DELETE": [
+				"$XSAPPNAME.EDIT"
+			],
+			"default": "$XSAPPNAME.RUN"
+		}
+	},
+	{
+		"source": "^/xsjs(.*)",
+		"destination": "AppRouterDemo_BE1_api",
+		"csrfProtection": true,
+		"authenticationType": "xsuaa",
+		"scope": {
+			"GET": "$XSAPPNAME.READ"
+		}
+	}
+	
+		]
 }
