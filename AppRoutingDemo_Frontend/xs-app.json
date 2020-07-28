@@ -18,8 +18,7 @@
 			],
 			"DELETE": [
 				"$XSAPPNAME.EDIT"
-			],
-			"default": "$XSAPPNAME.RUN"
+			]
 		}
 	},
 	{
