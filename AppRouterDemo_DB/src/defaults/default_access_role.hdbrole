@@ -1,8 +1,12 @@
 {
-	"role":{
-		"name": "default_access_role",
-		"schema_roles": [{
-		 "names": ["admin"]
-		}] 
-	}
+  "role": {
+    "name": "default_access_role",
+    "schema_roles": [
+      {
+        "names": [
+          "admin"
+        ]
+      }
+    ]
+  }
 }

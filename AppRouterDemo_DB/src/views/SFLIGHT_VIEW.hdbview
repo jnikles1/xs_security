@@ -1,1 +1,1 @@
-VIEW SFLIGHT_VIEW as select * from SFLIGHT_SYN
+VIEW SFLIGHT_VIEW as select * from SFLIGHT_SYN with structured privilege check

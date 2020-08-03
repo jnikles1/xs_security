@@ -1,0 +1,16 @@
+PROCEDURE "get_user"(
+	out MANDT NVARCHAR(3))
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+   	MANDT NVARCHAR(3);
+   	CURSOR v_cursor for select SESSION_CONTEXT('XS_CLIENT') FROM DUMMY;
+BEGIN
+	OPEN v_cursor;
+	FETCH v_cursor INTO MANDT;
+	CLOSE v_cursor;
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+END
